@@ -1,0 +1,28 @@
+using System.Threading.Tasks;
+using Xunit;
+using MottuFlowApi.Services;
+using MottuFlowApi.Models;
+using MottuFlowApi.Repositories;
+
+namespace MottuFlow.Testes
+{
+    public class FuncionarioServiceIntegrationTests
+    {
+        private readonly FuncionarioService _service;
+
+        public FuncionarioServiceIntegrationTests()
+        {
+            var repository = new FuncionarioRepository(); // ou mock
+            _service = new FuncionarioService(repository);
+        }
+
+        [Fact]
+        public async Task ListarTodos_DeveRetornarFuncionarios()
+        {
+            var funcionarios = await _service.ListarTodos();
+            Assert.NotNull(funcionarios);
+        }
+
+        // outros testes...
+    }
+}

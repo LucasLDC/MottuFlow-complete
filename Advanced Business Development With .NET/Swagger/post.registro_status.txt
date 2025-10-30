@@ -1,0 +1,9 @@
+{
+  "TipoStatus": "Entrada",
+  "Descricao": "Moto entrou no pátio",
+  "DataStatus": "2025-09-30T12:00:00",
+  "IdPatio": 1,
+  "IdMoto": 21,
+  "IdFuncionario": 1,
+  "IdCamera": 1
+}
