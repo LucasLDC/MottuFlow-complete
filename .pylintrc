@@ -1,0 +1,14 @@
+[MASTER]
+# Allow C extension packages to expose members Pylint can't introspect
+extension-pkg-allow-list=cv2,numpy
+
+[TYPECHECK]
+# Treat dynamic members in cv2 as generated to avoid E1101 (no-member)
+generated-members=cv2.*,cv2.aruco.*
+
+[MESSAGES CONTROL]
+# You can re-enable later if desired; we keep it on for safety and rely on settings above
+# disable=no-member
+
+[FORMAT]
+max-line-length=120
