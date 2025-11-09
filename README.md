@@ -8,6 +8,7 @@
 ## 📋 Índice
 
 - [Sobre o Projeto](#-sobre-o-projeto)
+- [Vídeo de Apresentação](#-vídeo-de-apresentação)
 - [Integrantes](#-integrantes)
 - [Arquitetura do Sistema](#-arquitetura-do-sistema)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
@@ -35,6 +36,15 @@ O **MottuFlow** é uma solução completa e integrada para gerenciamento de frot
 ✅ **HATEOAS** - API autodescritiva seguindo padrões REST  
 ✅ **Otimizações** - Connection Pool, GZIP, Batch Processing  
 ✅ **Segurança** - JWT com refresh tokens automáticos  
+
+---
+
+## 🎬 Vídeo de Apresentação
+
+Assista ao vídeo demonstrativo do projeto (fluxo principal e arquitetura explicada):  
+👉 https://youtu.be/fHKWL87WhPg
+
+---
 
 ---
 
