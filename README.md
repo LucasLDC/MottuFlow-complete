@@ -9,6 +9,7 @@
 
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Vídeo de Apresentação](#-vídeo-de-apresentação)
+- [Repositório](#-repositório)
 - [Integrantes](#-integrantes)
 - [Arquitetura do Sistema](#-arquitetura-do-sistema)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
@@ -35,7 +36,7 @@ O **MottuFlow** é uma solução completa e integrada para gerenciamento de frot
 ✅ **IoT Integration** - Detector Python com câmeras em tempo real  
 ✅ **HATEOAS** - API autodescritiva seguindo padrões REST  
 ✅ **Otimizações** - Connection Pool, GZIP, Batch Processing  
-✅ **Segurança** - JWT com refresh tokens automáticos  
+✅ **Segurança** - JWT com refresh tokens automáticos
 
 ---
 
@@ -46,15 +47,22 @@ Assista ao vídeo demonstrativo do projeto (fluxo principal e arquitetura explic
 
 ---
 
+## 🗂️ Repositório
+
+Código fonte completo disponível em:  
+👉 https://github.com/LucasLDC/MottuFlow-complete
+
+---
+
 ---
 
 ## 👥 Integrantes
 
-| Nome | RM | Turma |
-|------|-----|-------|
+| Nome                                    | RM       | Turma     |
+| --------------------------------------- | -------- | --------- |
 | João Gabriel Boaventura Marques e Silva | RM554874 | 2TDSB2025 |
-| Léo Mota Lima | RM557851 | 2TDSB2025 |
-| Lucas Leal das Chagas | RM551124 | 2TDSB2025 |
+| Léo Mota Lima                           | RM557851 | 2TDSB2025 |
+| Lucas Leal das Chagas                   | RM551124 | 2TDSB2025 |
 
 ---
 
@@ -116,6 +124,7 @@ Assista ao vídeo demonstrativo do projeto (fluxo principal e arquitetura explic
 ## 🛠️ Tecnologias Utilizadas
 
 ### Backend (.NET)
+
 - **ASP.NET Core 8.0** - Framework web moderno
 - **Entity Framework Core** - ORM para Oracle
 - **Oracle Database 19c** - Banco de dados relacional
@@ -123,6 +132,7 @@ Assista ao vídeo demonstrativo do projeto (fluxo principal e arquitetura explic
 - **xUnit** - Framework de testes
 
 ### IoT/Visão Computacional (Python)
+
 - **OpenCV** - Processamento de imagens
 - **YOLOv8** - Detecção de objetos (motos)
 - **ArUco** - Detecção de marcadores
@@ -130,6 +140,7 @@ Assista ao vídeo demonstrativo do projeto (fluxo principal e arquitetura explic
 - **Requests** - Cliente HTTP
 
 ### Mobile (React Native)
+
 - **Expo** - Framework React Native
 - **TypeScript** - Tipagem estática
 - **Expo Camera** - Acesso à câmera
@@ -137,6 +148,7 @@ Assista ao vídeo demonstrativo do projeto (fluxo principal e arquitetura explic
 - **Axios** - Cliente HTTP
 
 ### DevOps & Database
+
 - **PowerShell** - Scripts de automação
 - **Git/GitHub** - Versionamento
 - **Oracle SQL Developer** - Gerenciamento DB
@@ -146,6 +158,7 @@ Assista ao vídeo demonstrativo do projeto (fluxo principal e arquitetura explic
 ## ⚡ Funcionalidades
 
 ### 🎥 Sistema de Visão Computacional
+
 - Detecção em tempo real de motocicletas usando YOLOv8
 - Identificação de marcadores ArUco (DICT_6X6_250)
 - Cálculo automático de distância da câmera
@@ -153,6 +166,7 @@ Assista ao vídeo demonstrativo do projeto (fluxo principal e arquitetura explic
 - Interface visual com caixas delimitadoras
 
 ### 🔌 API Backend
+
 - CRUD completo para 7 entidades principais
 - Paginação automática de resultados
 - HATEOAS para navegação intuitiva
@@ -161,6 +175,7 @@ Assista ao vídeo demonstrativo do projeto (fluxo principal e arquitetura explic
 - Swagger UI interativo
 
 ### 📱 Aplicativo Mobile
+
 - Scanner de QR Code ArUco nativo
 - Visualização de tags em tempo real
 - Atualização automática de listas
@@ -168,6 +183,7 @@ Assista ao vídeo demonstrativo do projeto (fluxo principal e arquitetura explic
 - Interface responsiva e intuitiva
 
 ### 🔐 Segurança
+
 - Autenticação JWT
 - Refresh tokens automáticos
 - Validação de CPF/Email únicos
@@ -214,6 +230,7 @@ dotnet build
 ```
 
 Configurar `appsettings.json`:
+
 ```json
 {
   "ConnectionStrings": {
@@ -251,6 +268,7 @@ yarn install
 ```
 
 Este script irá:
+
 - ✅ Verificar MySQL/Oracle
 - ✅ Iniciar backend Java (porta 8080)
 - ✅ Iniciar mobile Expo (porta 8081)
@@ -259,24 +277,29 @@ Este script irá:
 ### Opção 2: Manual
 
 #### Backend .NET
+
 ```bash
 cd "Advanced Business Development With .NET"
 dotnet run
 ```
+
 Acesse: `http://localhost:5224/swagger`
 
 #### Detector IoT
+
 ```bash
 cd "Disruptive Architectures IOT & IA"
 python aruco_detector_api.py
 ```
 
 Controles:
+
 - `Q` - Sair
 - `S` - Ativar/Desativar envio API
 - `L` - Listar tags cadastradas
 
 #### Mobile App
+
 ```bash
 cd "Mobile Application/challenge-mottuflow/MottuFlow"
 npx expo start
@@ -298,25 +321,25 @@ Controllers/          → Recebe requisições HTTP
     ├── MotoController.cs
     ├── PatioController.cs
     └── ...
-    
+
 Services/            → Lógica de negócio
     ├── ArucoTagService
     ├── MotoService
     └── ...
-    
+
 Repositories/        → Acesso a dados
     ├── ArucoTagRepository
     ├── MotoRepository
     └── ...
-    
+
 Data/                → DbContext
     └── AppDbContext.cs
-    
+
 DTOs/                → Transferência de dados
     ├── ArucoTagInputDTO.cs
     ├── ArucoTagOutputDTO.cs
     └── ...
-    
+
 Models/              → Entidades
     ├── ArucoTag.cs
     ├── Moto.cs
@@ -326,35 +349,42 @@ Models/              → Entidades
 #### Principais Entidades
 
 **Funcionário**
+
 - Gerencia operadores do sistema
 - CPF e email únicos
 - Refresh tokens para autenticação
 
 **Moto**
+
 - Placa, modelo, fabricante, ano
 - Localização atual
 - Vinculada a um pátio
 
 **Pátio**
+
 - Nome, endereço, capacidade máxima
 - Gerencia múltiplas motos
 
 **ArUco Tag**
+
 - Código único (ARUCO-XXX)
 - Status (DETECTADO, ATIVO, INATIVO)
 - Vinculada a uma moto
 
 **Câmera**
+
 - Status operacional
 - Localização física
 - Vinculada a um pátio
 
 **Localidade**
+
 - Histórico de posições
 - Data/hora, ponto de referência
 - Relaciona moto, pátio e câmera
 
 **Registro de Status**
+
 - Auditoria de operações
 - Entrada/saída de motos
 - Histórico completo
@@ -366,6 +396,7 @@ Models/              → Entidades
 #### Detector de ArUco Tags
 
 **Funcionalidades:**
+
 - Captura de vídeo em tempo real
 - Detecção de motos com YOLOv8
 - Identificação de marcadores ArUco
@@ -373,6 +404,7 @@ Models/              → Entidades
 - Envio automático para API
 
 **Configurações principais:**
+
 ```python
 API_BASE_URL = "http://localhost:8080/api/aruco-tags/cadastrar"
 CAMERA_ID = 0  # Webcam padrão
@@ -381,6 +413,7 @@ ARUCO_DICT = cv2.aruco.DICT_6X6_250
 ```
 
 **Formato de envio:**
+
 ```json
 {
   "codigo": "ARUCO-123",
@@ -396,16 +429,19 @@ ARUCO_DICT = cv2.aruco.DICT_6X6_250
 #### Funcionalidades
 
 **Scanner QR Code:**
+
 - Leitura nativa de QR Codes ArUco
 - Envio automático para backend
 - Feedback visual de sucesso/erro
 
 **Gerenciamento de Tags:**
+
 - Lista todas as tags cadastradas
 - Atualização em tempo real
 - Exibição de status e associações
 
 **Autenticação:**
+
 - Login com email/senha
 - JWT com refresh automático
 - Logout seguro
@@ -428,11 +464,13 @@ const API_BASE_URL = "http://192.168.1.XXX:8080/api/aruco-tags";
 ## 🔗 API Endpoints
 
 ### Base URL
+
 ```
 http://localhost:5224/api
 ```
 
 ### Funcionários
+
 ```http
 GET    /api/funcionarios              # Listar todos
 GET    /api/funcionarios/{id}         # Buscar por ID
@@ -442,6 +480,7 @@ DELETE /api/funcionarios/{id}         # Deletar
 ```
 
 **Exemplo POST:**
+
 ```json
 {
   "nome": "Leonardo Mota",
@@ -454,6 +493,7 @@ DELETE /api/funcionarios/{id}         # Deletar
 ```
 
 ### Motos
+
 ```http
 GET    /api/motos                     # Listar todas
 GET    /api/motos/{id}                # Buscar por ID
@@ -464,6 +504,7 @@ GET    /api/motos/patio/{idPatio}     # Por pátio
 ```
 
 **Exemplo POST:**
+
 ```json
 {
   "placa": "ABC-1234",
@@ -476,6 +517,7 @@ GET    /api/motos/patio/{idPatio}     # Por pátio
 ```
 
 ### Pátios
+
 ```http
 GET    /api/patios                    # Listar todos
 GET    /api/patios/{id}               # Buscar por ID
@@ -485,6 +527,7 @@ DELETE /api/patios/{id}               # Deletar
 ```
 
 **Exemplo POST:**
+
 ```json
 {
   "nome": "Patio Central",
@@ -494,6 +537,7 @@ DELETE /api/patios/{id}               # Deletar
 ```
 
 ### ArUco Tags
+
 ```http
 GET    /api/arucotags                 # Listar todas
 GET    /api/arucotags/{id}            # Buscar por ID
@@ -504,6 +548,7 @@ GET    /api/arucotags/codigo/{codigo} # Por código
 ```
 
 **Exemplo POST:**
+
 ```json
 {
   "codigo": "ARUCO-123",
@@ -513,6 +558,7 @@ GET    /api/arucotags/codigo/{codigo} # Por código
 ```
 
 ### Câmeras
+
 ```http
 GET    /api/cameras                   # Listar todas
 GET    /api/cameras/{id}              # Buscar por ID
@@ -522,6 +568,7 @@ DELETE /api/cameras/{id}              # Deletar
 ```
 
 ### Localidades
+
 ```http
 GET    /api/localidades               # Listar todas
 POST   /api/localidades               # Criar nova
@@ -529,6 +576,7 @@ GET    /api/localidades/moto/{idMoto} # Por moto
 ```
 
 ### Registro de Status
+
 ```http
 GET    /api/registro-status           # Listar todos
 POST   /api/registro-status           # Criar novo
@@ -536,11 +584,13 @@ GET    /api/registro-status/moto/{id} # Por moto
 ```
 
 ### Health Check
+
 ```http
 GET    /api/health/ping               # Verificar status
 ```
 
 **Resposta:**
+
 ```json
 {
   "status": "API rodando 🚀",
@@ -573,10 +623,12 @@ REGISTRO_STATUS (id_registro, tipo_status, descricao, data_status, id_patio, id_
 ### Sequences e Triggers
 
 Todas as tabelas possuem:
+
 - **Sequence** para auto-incremento
 - **Trigger** para popular ID automaticamente
 
 Exemplo:
+
 ```sql
 CREATE SEQUENCE seq_funcionario START WITH 1 INCREMENT BY 1;
 
@@ -602,16 +654,19 @@ END;
 ### Testes Rápidos com cURL
 
 **1. Health Check**
+
 ```bash
 curl -i http://localhost:5224/api/health/ping
 ```
 
 **2. Listar Funcionários**
+
 ```bash
 curl -i http://localhost:5224/api/funcionarios
 ```
 
 **3. Criar Funcionário**
+
 ```bash
 curl -X POST http://localhost:5224/api/funcionarios \
   -H "Content-Type: application/json" \
@@ -626,6 +681,7 @@ curl -X POST http://localhost:5224/api/funcionarios \
 ```
 
 **4. Listar Motos**
+
 ```bash
 curl -i http://localhost:5224/api/motos
 ```
@@ -679,6 +735,7 @@ GET /api/motos?pageNumber=1&pageSize=10
 ```
 
 **Resposta:**
+
 ```json
 {
   "items": [...],
@@ -694,6 +751,7 @@ GET /api/motos?pageNumber=1&pageSize=10
 ### 3. Otimizações de Performance
 
 #### Connection Pool (HikariCP)
+
 ```properties
 # application.properties
 spring.datasource.hikari.maximum-pool-size=10
@@ -702,6 +760,7 @@ spring.datasource.hikari.connection-timeout=20000
 ```
 
 #### Compressão GZIP
+
 ```csharp
 // Program.cs
 builder.Services.AddResponseCompression(options => {
@@ -711,6 +770,7 @@ builder.Services.AddResponseCompression(options => {
 ```
 
 #### Batch Processing
+
 ```csharp
 // Operações em lote (20 registros por vez)
 await context.SaveChangesAsync();
@@ -752,16 +812,19 @@ dotnet build
 ### Mobile não conecta na API
 
 **Android Emulator:**
+
 ```typescript
 const API_BASE_URL = "http://10.0.2.2:8080";
 ```
 
 **iOS Simulator:**
+
 ```typescript
 const API_BASE_URL = "http://localhost:8080";
 ```
 
 **Dispositivo físico:**
+
 ```bash
 # Descobrir seu IP
 ipconfig
@@ -772,6 +835,7 @@ const API_BASE_URL = "http://192.168.1.100:8080";
 ### Erro de CORS
 
 No backend, adicione em `Program.cs`:
+
 ```csharp
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowAll", builder => {
